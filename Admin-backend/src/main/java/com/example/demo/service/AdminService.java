@@ -9,15 +9,15 @@ import com.example.demo.exception.ResourceNotFoundException;
 
 public interface AdminService {
 
-	List<Admin> getAllAdmin();
+//	List<Admin> getAllAdmin();
 
-	ResponseEntity<Admin> getAdminById(Integer adminId) throws ResourceNotFoundException;
+//	ResponseEntity<Admin> getAdminById(Integer adminId) throws ResourceNotFoundException;
 
-	Admin createAdmin(Admin Admin);
+//Admin createAdmin(Admin Admin);
 
-	ResponseEntity<Admin> updateAdmin(Integer adminId, Admin adminDetails) throws ResourceNotFoundException;
+//ResponseEntity<Admin> updateAdmin(Integer adminId, Admin adminDetails) throws ResourceNotFoundException;
 
-	Map<String, Boolean> deleteAdmin(Integer adminId) throws ResourceNotFoundException;
+//	Map<String, Boolean> deleteAdmin(Integer adminId) throws ResourceNotFoundException;
 
 	boolean checkPass(String email, String password);
 

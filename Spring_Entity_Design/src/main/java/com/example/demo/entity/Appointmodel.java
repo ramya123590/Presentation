@@ -22,7 +22,7 @@ private int id;
 
 	private String slot;
 	
-	private boolean isfeepaid;
+	private String isfeepaid;
 	private String patient_id;
 	private int doctor_id;
 

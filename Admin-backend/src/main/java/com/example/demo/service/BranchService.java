@@ -11,14 +11,18 @@ public interface BranchService {
 	
 	public List<Branch> getAllBranch();
 	
-	public ResponseEntity<Branch> getBranchById(Integer branchId) throws ResourceNotFoundException;
-
-	public Branch createBranch(Branch branch);
-
-	public ResponseEntity<Branch> updateBranch(Integer branchId, Branch branchDetails) throws ResourceNotFoundException;
-
-	public Map<String, Boolean> deleteBranch(Integer branchId) throws ResourceNotFoundException;
-
-	public List<String> findNames();
-
+	
+	  public ResponseEntity<Branch> getBranchById(Integer branchId) throws
+	  ResourceNotFoundException;
+	  
+	  public Branch createBranch(Branch branch);
+	  
+	  public ResponseEntity<Branch> updateBranch(Integer branchId, Branch
+	  branchDetails) throws ResourceNotFoundException;
+	  
+	  public Map<String, Boolean> deleteBranch(Integer branchId) throws
+	  ResourceNotFoundException;
+	  
+	  public List<String> findNames();
+	 
 }

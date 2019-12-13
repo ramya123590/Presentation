@@ -55,7 +55,7 @@ public class Appointment {
 	private String slot;
 	
 	@Column(name = "isfeepaid")
-	private boolean isfeepaid;
+	private String isfeepaid;
 	
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 	@OneToOne(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH,

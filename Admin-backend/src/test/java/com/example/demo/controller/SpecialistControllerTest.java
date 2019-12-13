@@ -65,7 +65,7 @@ public class SpecialistControllerTest {
 	@Test
 	public void findSpeciality() throws Exception {
 		mockMvc.perform(MockMvcRequestBuilders.get("/api/speciality").accept(MediaType.APPLICATION_JSON))
-			.andExpect(jsonPath("$", hasSize(5))).andDo(print());
+			.andExpect(jsonPath("$", hasSize(6))).andDo(print());
 		//has size- no of records in db
 	}
 	
@@ -80,7 +80,7 @@ public class SpecialistControllerTest {
 		
 		MvcResult result = mockMvc.perform(request)
 				.andExpect(status().isOk())
-				.andExpect(content().json("[\"Cardiologist\",\"Dental\",\"ENT\",\"Eye\",\"Gynacology\"]"))
+				.andExpect(content().json("[\"Cardiologist\",\"Dental\",\"ENT\",\"Eye\",\"Gynacology\",\"General Surgery\"]"))
 				.andReturn();
 		//JSONAssert.assertEquals(expected, result.getResponse().getContentAsString(), false);
 		

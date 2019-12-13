@@ -85,7 +85,7 @@ public class AppointmentController {
     	app.setDoctorregistration(doctorregistration);
     	app.setDate(appointment.getDate());
     	app.setSlot(appointment.getSlot());
-    	app.setIsfeepaid(appointment.isIsfeepaid());
+    	app.setIsfeepaid(appointment.getIsfeepaid());
     	System.out.println(app);
     	mail.setTo(patientregistraion.getEmail());
     	

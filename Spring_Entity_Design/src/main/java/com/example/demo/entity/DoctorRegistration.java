@@ -16,6 +16,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -38,6 +39,8 @@ public class DoctorRegistration {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int doctor_id;
+	
+	@NotNull
 	@Column(name = "first_name")
 	private String firstName;
 	
@@ -45,11 +48,12 @@ public class DoctorRegistration {
 	private String lastName;
 	
 	
-	
+	@NotNull
 	@Column(name = "specialist")
 	private String specialist;
 	
 	
+	@NotNull
 	@Column(name = "branch")
 	private String branch;
 	
@@ -57,7 +61,7 @@ public class DoctorRegistration {
 	@Column(name = "photo")
 	private String photo;
 	
-	
+	@NotNull
 	@Column(name = "fee")
 	private long fee;
 	

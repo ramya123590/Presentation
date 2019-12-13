@@ -28,33 +28,27 @@ public class AdminController {
     @Autowired
     private AdminService adminService;
 
-    @GetMapping("/admins")
-    public List<Admin> getAllAdmins() {
-        return adminService.getAllAdmin();
-    }
-
-    @GetMapping("/admins/{id}")
-    public ResponseEntity<Admin> getAdminById(@PathVariable(value = "id") Integer adminId)
-        throws ResourceNotFoundException {    
-        return adminService.getAdminById(adminId);
-    }
-    
-    @PostMapping("/admins")
-    public Admin createAdmin(@Valid @RequestBody Admin admin) {
-        return adminService.createAdmin(admin);
-    }
-
-    @PutMapping("/admins/{id}")
-    public ResponseEntity<Admin> updateAdmin(@PathVariable(value = "id") Integer adminId,
-         @Valid @RequestBody Admin adminDetails) throws ResourceNotFoundException {
-      return adminService.updateAdmin(adminId, adminDetails);
-    }
-
-    @DeleteMapping("/admins/{id}")
-    public Map<String, Boolean> deleteAdmin(@PathVariable(value = "id") Integer adminId)
-         throws ResourceNotFoundException {     
-        return adminService.deleteAdmin(adminId);
-    }
+	/*
+	 * @GetMapping("/admins") public List<Admin> getAllAdmins() { return
+	 * adminService.getAllAdmin(); }
+	 * 
+	 * @GetMapping("/admins/{id}") public ResponseEntity<Admin>
+	 * getAdminById(@PathVariable(value = "id") Integer adminId) throws
+	 * ResourceNotFoundException { return adminService.getAdminById(adminId); }
+	 * 
+	 * @PostMapping("/admins") public Admin createAdmin(@Valid @RequestBody Admin
+	 * admin) { return adminService.createAdmin(admin); }
+	 * 
+	 * @PutMapping("/admins/{id}") public ResponseEntity<Admin>
+	 * updateAdmin(@PathVariable(value = "id") Integer adminId,
+	 * 
+	 * @Valid @RequestBody Admin adminDetails) throws ResourceNotFoundException {
+	 * return adminService.updateAdmin(adminId, adminDetails); }
+	 * 
+	 * @DeleteMapping("/admins/{id}") public Map<String, Boolean>
+	 * deleteAdmin(@PathVariable(value = "id") Integer adminId) throws
+	 * ResourceNotFoundException { return adminService.deleteAdmin(adminId); }
+	 */
     
     @PostMapping("/admins/validation")
     public boolean loginValidation(@RequestBody Login user1){

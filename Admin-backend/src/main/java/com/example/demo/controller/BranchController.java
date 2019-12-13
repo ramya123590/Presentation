@@ -33,37 +33,32 @@ public class BranchController {
     }
     
   
-
-    @GetMapping("/branch/{id}")
-    public ResponseEntity<Branch> getBranchById(@PathVariable(value = "id") Integer branchId)
-        throws ResourceNotFoundException {
-        return branchService.getBranchById(branchId);
-    }
-    
-    @PostMapping("/branch")
-    public Branch createBranch(@Valid @RequestBody Branch branch) {
-        return branchService.createBranch(branch);
-        
-    }
-    
-    @GetMapping("/branch/names")
-    public List<String> getAllSpecialistNames() {
-        return branchService.findNames();
-    }
-
-    @PutMapping("/branch/{id}")
-    public ResponseEntity<Branch> updateBranch(@PathVariable(value = "id") Integer branchId,
-         @Valid @RequestBody Branch branchDetails) throws ResourceNotFoundException {
-			return branchService.updateBranch(branchId, branchDetails);
-       
-     
-    }
-
-    @DeleteMapping("/branch/{id}")
-    public Map<String, Boolean> deleteBranch(@PathVariable(value = "id") Integer branchid)
-         throws ResourceNotFoundException {
-			return branchService.deleteBranch(branchid);
-       
-    }
-    
+	
+	  @GetMapping("/branch/{id}") public ResponseEntity<Branch>
+	  getBranchById(@PathVariable(value = "id") Integer branchId) throws
+	  ResourceNotFoundException { return branchService.getBranchById(branchId); }
+	  
+	  @PostMapping("/branch") public Branch createBranch(@Valid @RequestBody Branch
+	  branch) { return branchService.createBranch(branch);
+	  
+	  }
+	  
+	  @GetMapping("/branch/names") public List<String> getAllSpecialistNames() {
+	  return branchService.findNames(); }
+	  
+	  @PutMapping("/branch/{id}") public ResponseEntity<Branch>
+	  updateBranch(@PathVariable(value = "id") Integer branchId,
+	  
+	  @Valid @RequestBody Branch branchDetails) throws ResourceNotFoundException {
+	  return branchService.updateBranch(branchId, branchDetails);
+	  
+	  
+	  }
+	  
+	  @DeleteMapping("/branch/{id}") public Map<String, Boolean>
+	  deleteBranch(@PathVariable(value = "id") Integer branchid) throws
+	  ResourceNotFoundException { return branchService.deleteBranch(branchid);
+	  
+	  }
+	 
 }

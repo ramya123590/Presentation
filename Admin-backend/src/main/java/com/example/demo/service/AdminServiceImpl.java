@@ -19,56 +19,51 @@ public class AdminServiceImpl implements AdminService {
     private AdminRepository adminRepository;
 	
 	  
-		@Override
+	/*	@Override
 		@Transactional
 	    public List<Admin> getAllAdmin() {
 	        return adminRepository.findAll();
-	    }
+	    } */
 
 	   
-		@Override
-		@Transactional
-	    public ResponseEntity<Admin> getAdminById(Integer adminId) throws ResourceNotFoundException
-	    {
-	    	Admin admin = adminRepository.findById(adminId)
-	          .orElseThrow(() -> new ResourceNotFoundException("Admin not found for this id :: " + adminId));
-	        return ResponseEntity.ok().body(admin);
-	    }
-	    
-		@Override
-		@Transactional
-	    public Admin createAdmin(Admin admin) 
-	    {
-			BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-	        String newPassword = passwordEncoder.encode(admin.getAdmin_password());
-	        admin.setAdmin_password(newPassword);
-	        return adminRepository.save(admin);
-	    }
-
-		@Override
-		@Transactional
-	    public ResponseEntity<Admin> updateAdmin(Integer adminId, Admin adminDetails) throws ResourceNotFoundException
-	    {
-	        Admin admin = adminRepository.findById(adminId)
-	        .orElseThrow(() -> new ResourceNotFoundException("Admin not found for this id :: " + adminId));
-
-	        admin.setAdminUserName(adminDetails.getAdminUserName());
-	        admin.setAdmin_password(adminDetails.getAdmin_password());
-	        Admin updatedAdmin = adminRepository.save(admin);
-	        return ResponseEntity.ok(updatedAdmin);
-	    }
-
-	    
-		@Override
-		@Transactional
-	    public Map<String, Boolean> deleteAdmin(Integer adminId) throws ResourceNotFoundException {
-
-	        Admin admin = adminRepository.findById(adminId).orElseThrow(() -> new ResourceNotFoundException("Admin not found for this id :: " + adminId));
-	        adminRepository.delete(admin);
-	        Map<String, Boolean> response = new HashMap<>();
-	        response.put("deleted", Boolean.TRUE);
-	        return response;
-	    }
+	/*
+	 * @Override
+	 * 
+	 * @Transactional public ResponseEntity<Admin> getAdminById(Integer adminId)
+	 * throws ResourceNotFoundException { Admin admin =
+	 * adminRepository.findById(adminId) .orElseThrow(() -> new
+	 * ResourceNotFoundException("Admin not found for this id :: " + adminId));
+	 * return ResponseEntity.ok().body(admin); }
+	 * 
+	 * @Override
+	 * 
+	 * @Transactional public Admin createAdmin(Admin admin) { BCryptPasswordEncoder
+	 * passwordEncoder = new BCryptPasswordEncoder(); String newPassword =
+	 * passwordEncoder.encode(admin.getAdmin_password());
+	 * admin.setAdmin_password(newPassword); return adminRepository.save(admin); }
+	 * 
+	 * @Override
+	 * 
+	 * @Transactional public ResponseEntity<Admin> updateAdmin(Integer adminId,
+	 * Admin adminDetails) throws ResourceNotFoundException { Admin admin =
+	 * adminRepository.findById(adminId) .orElseThrow(() -> new
+	 * ResourceNotFoundException("Admin not found for this id :: " + adminId));
+	 * 
+	 * admin.setAdminUserName(adminDetails.getAdminUserName());
+	 * admin.setAdmin_password(adminDetails.getAdmin_password()); Admin updatedAdmin
+	 * = adminRepository.save(admin); return ResponseEntity.ok(updatedAdmin); }
+	 * 
+	 * 
+	 * @Override
+	 * 
+	 * @Transactional public Map<String, Boolean> deleteAdmin(Integer adminId)
+	 * throws ResourceNotFoundException {
+	 * 
+	 * Admin admin = adminRepository.findById(adminId).orElseThrow(() -> new
+	 * ResourceNotFoundException("Admin not found for this id :: " + adminId));
+	 * adminRepository.delete(admin); Map<String, Boolean> response = new
+	 * HashMap<>(); response.put("deleted", Boolean.TRUE); return response; }
+	 */
 		
 		@Override
 		@Transactional

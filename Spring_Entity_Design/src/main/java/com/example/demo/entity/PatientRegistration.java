@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
@@ -37,40 +38,57 @@ public class PatientRegistration {
 	private String userId;
 	@ApiModelProperty(notes = "First Name",name="firstName",required=true,value="test name")
 	@Column(name = "first_name")
+	@NotNull
 	private String firstName;
+	
 	@ApiModelProperty(notes = "Middle Name",name="middleName",required=true,value="test name")
 	@Column(name = "middle_name")
 	private String middleName;
+	
 	@ApiModelProperty(notes = "Last Name",name="lastName",required=true,value="test name")
 	@Column(name = "last_name")
 	private String lastName;
 	@ApiModelProperty(notes = "Email",name="email",required=true,value="test name")
+	
 	@Column(name = "email" ,unique= true)
 	private String email;
+	
+	@NotNull
 	@ApiModelProperty(notes = "Date of birth",name="dateofbirth",required=true,value="test name")
 	@Column(name = "date_of_birth")
 	private Date dateofbirth;
+	
+	@NotNull
 	@ApiModelProperty(notes="age",name="age",required=true,value="test name")
 	@Column(name = "age")
 	private int age;
+	
+	@NotNull
 	@ApiModelProperty(notes = "Gender",name="gender",required=true,value="test name")
 	@Column(name = "gender")
 	private String gender;
+	
+	@NotNull
 	@ApiModelProperty(notes = "Address",name="Address",required=true,value="test name")
 	@Column(name = "Adress")
 	private String Address;
+	
 	@ApiModelProperty(notes = "City",name="state",required=true,value="test name")
 	@Column(name = "city")
 	private String city;
+	
 	@ApiModelProperty(notes = "State",name="state",required=true,value="test name")
 	@Column(name = "state")
 	private String state;
+	
 	@ApiModelProperty(notes = "Pincode",name="pincode",required=true,value="test name")
 	@Column(name = "pincode")
 	private int pincode;
+	
 	@ApiModelProperty(notes = "Phone",name="phone",required=true,value="test name")
 	@Column(name = "phone")
 	private Long phone;
+	
 	@ApiModelProperty(notes = "Password",name="password",required=true,value="test name")
 	private String password;
 

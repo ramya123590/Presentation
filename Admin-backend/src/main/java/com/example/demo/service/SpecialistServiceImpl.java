@@ -23,14 +23,14 @@ public class SpecialistServiceImpl implements SpecialistService {
 		// TODO Auto-generated method stub
 		return specialistRepository.findAll();
 	}
-
-	@Override
-	public ResponseEntity<Specialist> getSpecialistById(Integer specialistId) throws ResourceNotFoundException {
-		// TODO Auto-generated method stub
-		Specialist specialist = specialistRepository.findById(specialistId)
-		          .orElseThrow(() -> new ResourceNotFoundException("Specialist not found for this id :: " + specialistId));
-		        return ResponseEntity.ok().body(specialist);
-	}
+	
+	  @Override public ResponseEntity<Specialist> getSpecialistById(Integer
+	  specialistId) throws ResourceNotFoundException { 
+		  // TODO Auto-generated  method stub
+	  Specialist specialist = specialistRepository.findById(specialistId) .orElseThrow(() -> new
+	  ResourceNotFoundException("Specialist not found for this id :: " + specialistId)); 
+	  return ResponseEntity.ok().body(specialist); }
+	 
 
 	@Override
 	public Specialist createSpecialist(Specialist specialist) {
